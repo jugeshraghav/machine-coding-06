@@ -33,9 +33,6 @@
 }
 .restaurant-section {
   padding: 2rem 0;
-  width: max-content;
-  text-align: left;
-  margin: auto;
 }
 /************* RESTAURANT SECTION **********/
 .restaurant-heading {
@@ -80,7 +77,8 @@
 }
 .food-price,
 .food-restaurant,
-.review-comment {
+.review-comment,
+.res-menu-list {
   font-size: var(--text-size);
 }
 .food-restaurant {
@@ -100,14 +98,14 @@
 .res-container {
   width: 700px;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 .res-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 .res-title {
   font-size: var(--main-heading);
@@ -242,4 +240,33 @@
 }
 .close-modal-btn:hover {
   font-size: 30px;
+}
+
+/*************** Responsive Screens **********/
+@media (max-width: 1060px) {
+  .res-container {
+    width: 600px;
+  }
+  .back-to-home-btn {
+    top: 4rem;
+    left: 5rem;
+  }
+}
+@media (max-width: 880px) {
+  .res-container {
+    width: 500px;
+  }
+  .back-to-home-btn {
+    top: 4rem;
+    left: 3rem;
+  }
+}
+@media (max-width: 610px) {
+  .res-container {
+    width: 100%;
+  }
+  .back-to-home-btn {
+    top: 1rem;
+    left: 1rem;
+  }
 }

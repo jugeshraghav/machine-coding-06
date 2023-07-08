@@ -18,6 +18,7 @@ export const RestaurantDetail = () => {
   const currentRestaurant = restaurants?.find(
     ({ id }) => Number(id) === Number(resId)
   );
+  const allFoodNames = currentRestaurant?.menu?.map((item) => item?.name);
 
   return (
     <>
@@ -30,7 +31,7 @@ export const RestaurantDetail = () => {
         <div className="res-header">
           <div className="res-details">
             <p className="res-title">{currentRestaurant?.name}</p>
-            {/* <p className="res-menu-list">{currentRestaurant?.menu.join(",")}</p> */}
+            <p className="res-menu-list">{allFoodNames.join(",")}</p>
             <p className="res-address">{currentRestaurant?.address}</p>
             <p className="res-rating">
               Average rating: {currentRestaurant?.averageRating}
