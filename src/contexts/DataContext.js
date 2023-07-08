@@ -10,7 +10,9 @@ const reducer = (state, action) => {};
 const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initial_state);
   return (
-    <DataContext.Provider value={{ state, dispatch }}></DataContext.Provider>
+    <DataContext.Provider value={{ state, dispatch }}>
+      {children}
+    </DataContext.Provider>
   );
 };
 

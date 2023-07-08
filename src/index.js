@@ -9,13 +9,13 @@ import DataProvider, { useData } from "./contexts/DataContext";
 export { useData };
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <DataProvider>
+  <React.StrictMode>
     <BrowserRouter>
-      <React.StrictMode>
+      <DataProvider>
         <App />
-      </React.StrictMode>
+      </DataProvider>
     </BrowserRouter>
-  </DataProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
