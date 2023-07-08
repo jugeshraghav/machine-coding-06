@@ -1,4 +1,5 @@
 import { useData } from "../index";
+import { Restaurant } from "../components/Restaurant";
 
 export const Home = () => {
   const {
@@ -14,18 +15,28 @@ export const Home = () => {
     <>
       <p className="res-app-main-heading">Food Ordering App</p>
       <p className="res-app-sub-heading">Select Your Cuisine</p>
-      {cuisines?.map(({ id, name }) => (
-        <button key={id} onClick={() => handleSelectCuisine(id)}>
-          {name}
-        </button>
-      ))}
-      {filteredRestaurants.length > 0 ? (
-        filteredRestaurants?.map((restaurant) => (
-          <h1 key={restaurant?.id}>He</h1>
-        ))
-      ) : (
-        <p>Select some Cuisines </p>
-      )}
+      <div className="cuisine-btn-container">
+        {cuisines?.map(({ id, name }) => (
+          <button
+            className="primary-btn"
+            key={id}
+            onClick={() => handleSelectCuisine(id)}
+          >
+            {name}
+          </button>
+        ))}
+      </div>
+
+      <div className="restaurant-section">
+        {" "}
+        {filteredRestaurants.length > 0 ? (
+          filteredRestaurants?.map((restaurant) => (
+            <Restaurant key={restaurant?.id} restaurant={restaurant} />
+          ))
+        ) : (
+          <p className="">Select some Cuisines </p>
+        )}
+      </div>
     </>
   );
 };

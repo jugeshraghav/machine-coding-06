@@ -14,6 +14,8 @@ const reducer = (state, action) => {
   switch (type) {
     case "SET_SELECTED_CUISINE":
       return { ...state, selectedCuisineId: payload };
+    case "ADD_REVIEW":
+      return { ...state, restaurants: payload };
     default:
       return state;
   }
@@ -24,7 +26,7 @@ const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initial_state);
   /////////
   const filteredRestaurants = state?.restaurants?.filter(
-    ({ id }) => id === state?.selectedCuisineId
+    ({ cuisine_id }) => cuisine_id === state?.selectedCuisineId
   );
 
   return (
