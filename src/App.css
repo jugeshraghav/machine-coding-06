@@ -1,3 +1,10 @@
+:root {
+  --primary-color: FD8A8A;
+}
 .App {
   text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
 }
