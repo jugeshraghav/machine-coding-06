@@ -4,7 +4,7 @@ import { useData } from "../contexts/DataContext";
 import "../App.css";
 export const AddReviewModal = ({ show, onClose, res }) => {
   const [currentReview, setCurrentReview] = useState({
-    rating: 5,
+    rating: 0,
     comment: "",
     revName: "Jugesh",
     pp: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1253547685.1686987260&semt=ais",
@@ -29,7 +29,13 @@ export const AddReviewModal = ({ show, onClose, res }) => {
       <div className="modal-container" onClick={() => onClose()}>
         <div className="modal" onClick={(e) => e.stopPropagation()}>
           <p className="modal-heading">Add your Review</p>
-
+          <p>
+            {currentReview.rating === 0
+              ? "Please select some rating *"
+              : currentReview.comment.length === 0
+              ? "Please add comment *"
+              : ""}
+          </p>
           <div className="modal-input-container">
             <p className="modal-input-text">Rating</p>
             <select

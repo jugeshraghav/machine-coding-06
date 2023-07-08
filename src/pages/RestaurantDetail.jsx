@@ -19,7 +19,14 @@ export const RestaurantDetail = () => {
     ({ id }) => Number(id) === Number(resId)
   );
   const allFoodNames = currentRestaurant?.menu?.map((item) => item?.name);
+  const sumOfAllRatings = currentRestaurant?.ratings?.reduce(
+    (acc, { rating }) => acc + rating,
+    0
+  );
 
+  const avgRating = (
+    sumOfAllRatings / currentRestaurant?.ratings?.length
+  ).toFixed(2);
   return (
     <>
       <AddReviewModal
@@ -33,9 +40,7 @@ export const RestaurantDetail = () => {
             <p className="res-title">{currentRestaurant?.name}</p>
             <p className="res-menu-list">{allFoodNames.join(",")}</p>
             <p className="res-address">{currentRestaurant?.address}</p>
-            <p className="res-rating">
-              Average rating: {currentRestaurant?.averageRating}
-            </p>
+            <p className="res-rating">Average rating: {avgRating}</p>
           </div>
           <button className="primary-btn" onClick={() => setShowModal(true)}>
             {" "}
