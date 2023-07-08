@@ -1,7 +1,7 @@
-import { RxCrossCircled } from "react-icons/rx";
-import "../App.css";
 import { useState } from "react";
+import { RxCrossCircled } from "react-icons/rx";
 import { useData } from "../contexts/DataContext";
+import "../App.css";
 export const AddReviewModal = ({ show, onClose, res }) => {
   const [currentReview, setCurrentReview] = useState({
     rating: 5,

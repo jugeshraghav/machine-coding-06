@@ -1,14 +1,15 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useData } from "../index";
-import { FaBackward, FaStar } from "react-icons/fa";
-import "../App.css";
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { FaBackward, FaStar } from "react-icons/fa";
+import { useData } from "../index";
 import { AddReviewModal } from "../components/AddReviewModal";
+import "../App.css";
 
 export const RestaurantDetail = () => {
-  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const { resId } = useParams();
+
+  const [showModal, setShowModal] = useState(false);
 
   const {
     state: { restaurants },

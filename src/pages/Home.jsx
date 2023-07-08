@@ -1,4 +1,7 @@
+//context imports
 import { useData } from "../index";
+
+//component imports
 import { Restaurant } from "../components/Restaurant";
 
 export const Home = () => {
@@ -8,6 +11,7 @@ export const Home = () => {
     filteredRestaurants,
   } = useData();
 
+  //handlers
   const handleSelectCuisine = (cusineId) => {
     dispatch({ type: "SET_SELECTED_CUISINE", payload: cusineId });
   };
